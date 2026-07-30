@@ -1,12 +1,11 @@
 # Articles
 
-### Package Vignettes
+### User Guides
 
 - [Foundr
   Vignette](https://byandell-sysgen.github.io/foundr/articles/foundr.md):
-- [foundrShiny](https://byandell-sysgen.github.io/foundr/articles/foundrShiny.md):
 
-### Developer Documentation
+### Developer Guides
 
 - [foundr Developer Guide Overview &
   Architecture](https://byandell-sysgen.github.io/foundr/articles/devel_guide/index.md):
