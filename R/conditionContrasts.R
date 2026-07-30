@@ -108,8 +108,7 @@ conditionContrasts <- function(traitSignal, traitStats, termname = "signal",
 #' @export
 #' @rdname conditionContrasts
 #' @importFrom dplyr dense_rank filter group_by mutate summarize ungroup
-#' @importFrom ggplot2 aes element_text facet_wrap geom_jitter geom_point
-#'             geom_vline ggplot scale_fill_manual theme xlab ylab
+#' @importFrom ggplot2 aes element_text facet_wrap geom_jitter geom_point geom_vline ggplot scale_fill_manual theme xlab ylab
 #'
 ggplot_conditionContrasts <- function(object,
                                       bysex = c("Both Sexes", "Female", "Male", "Sex Contrast"),

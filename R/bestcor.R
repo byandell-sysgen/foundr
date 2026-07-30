@@ -8,8 +8,7 @@
 #'
 #' @return sorted vector of absolute correlations with names
 #' @export
-#' @importFrom dplyr across arrange as_tibble bind_rows desc distinct
-#'             everything filter mutate select
+#' @importFrom dplyr across arrange as_tibble bind_rows desc distinct everything filter mutate select
 #' @importFrom tidyr matches pivot_wider separate_wider_delim unite
 #' @importFrom stats cor
 #' @importFrom rlang .data
@@ -318,8 +317,7 @@ is_bestcor <- function(object) {
 #' @export
 #' @importFrom tidyr pivot_longer unite
 #' @importFrom dplyr mutate select
-#' @importFrom ggplot2 aes autoplot element_text facet_grid
-#'             geom_vline geom_point ggplot scale_y_discrete theme ylab
+#' @importFrom ggplot2 aes autoplot element_text facet_grid geom_vline geom_point ggplot scale_y_discrete theme ylab
 #' @importFrom stats reorder
 #' @importFrom rlang .data
 #' 
@@ -371,6 +369,7 @@ ggplot_bestcor <- function(object, mincor = 0.7, abscor = TRUE, ...) {
   p
 }
 #' @rdname bestcor
+#' @export
 #' @method autoplot bestcor
 #'
 autoplot.bestcor <- function(object, ...) {

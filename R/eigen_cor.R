@@ -91,8 +91,7 @@ eigen_cor <- function(object) {
 #' @return ggplot object
 #' @rdname eigen_cor
 #' @export
-#' @importFrom ggplot2 aes element_blank facet_wrap geom_point ggplot ggtitle
-#'             scale_color_manual scale_y_discrete theme ylab
+#' @importFrom ggplot2 aes element_blank facet_wrap geom_point ggplot ggtitle scale_color_manual scale_y_discrete theme ylab
 #' @importFrom rlang .data
 #'
 ggplot_eigen_cor <- function(object, facetname, colorname,

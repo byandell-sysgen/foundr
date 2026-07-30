@@ -17,4 +17,4 @@ Suggests:
 LazyData: true
 License: GPL-3
 Encoding: UTF-8
-RoxygenNote: 7.3.1
+Config/roxygen2/version: 8.0.0

@@ -60,8 +60,7 @@ module_band1 <- function(response, traitModule) {
 #'
 #' @return ggplot object
 #' 
-#' @importFrom ggplot2 aes coord_flip element_text geom_bar ggplot
-#'             scale_fill_identity scale_y_reverse theme theme_void
+#' @importFrom ggplot2 aes coord_flip element_text geom_bar ggplot scale_fill_identity scale_y_reverse theme theme_void
 #' @export
 #' @rdname module_band
 #'

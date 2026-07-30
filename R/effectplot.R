@@ -8,8 +8,7 @@
 #' @return ggplot object
 #' @export
 #' @importFrom dplyr arrange filter mutate rename
-#' @importFrom ggplot2 aes element_text facet_grid geom_boxplot
-#'             geom_jitter ggplot scale_size theme
+#' @importFrom ggplot2 aes element_text facet_grid geom_boxplot geom_jitter ggplot scale_size theme
 #' @importFrom tidyr pivot_longer unite
 #' @importFrom rlang .data
 #'

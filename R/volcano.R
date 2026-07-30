@@ -13,8 +13,7 @@
 #' @return ggplot object
 #' @export
 #' @importFrom dplyr filter mutate
-#' @importFrom ggplot2 aes element_text geom_hline geom_point geom_vline
-#'             geom_text ggplot scale_color_manual theme theme_minimal xlab ylab
+#' @importFrom ggplot2 aes element_text geom_hline geom_point geom_vline geom_text ggplot scale_color_manual theme theme_minimal xlab ylab
 #' @importFrom ggrepel geom_text_repel
 #' @importFrom rlang .data
 #'

@@ -37,8 +37,8 @@ ggplot_wgcnaModules <- function(object,
 }
 #' Autoplot of wgcnaModules
 #'
-#' @param object 
-#' @param ... 
+#' @param object object of class \code{wgcnaModules}
+#' @param ... additional parameters
 #'
 #' @return ggplot2 object
 #' @rdname ggplot_wgcnaModules
@@ -93,8 +93,8 @@ ggplot_listof_wgcnaModules <- function(object,
 }
 #' Autoplot of wgcnaModules
 #'
-#' @param object 
-#' @param ... 
+#' @param object object of class \code{listof_wgcnaModules}
+#' @param ... additional parameters
 #'
 #' @return ggplot2 object
 #' @rdname ggplot_wgcnaModules

@@ -13,8 +13,7 @@
 #' @importFrom dplyr distinct group_by mutate select summarize ungroup
 #' @importFrom tidyr all_of unite
 #' @importFrom rlang .data
-#' @importFrom ggplot2 aes element_text facet_grid geom_jitter ggplot ggtitle
-#'             scale_fill_manual scale_shape_manual theme xlab ylab
+#' @importFrom ggplot2 aes element_text facet_grid geom_jitter ggplot ggtitle scale_fill_manual scale_shape_manual theme xlab ylab
 #' @importFrom cowplot plot_grid
 #'
 #' @export

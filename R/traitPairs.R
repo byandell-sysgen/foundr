@@ -10,8 +10,7 @@
 #' @export
 #' @importFrom tidyr unite
 #' @importFrom dplyr across count everything filter left_join mutate
-#' @importFrom ggplot2 aes element_text facet_grid geom_line geom_point geom_smooth 
-#'             ggplot ggtitle scale_color_manual scale_fill_manual scale_shape_manual theme
+#' @importFrom ggplot2 aes element_text facet_grid geom_line geom_point geom_smooth ggplot ggtitle scale_color_manual scale_fill_manual scale_shape_manual theme
 #' @importFrom rlang .data
 #' 
 #' @examples
@@ -102,7 +101,7 @@ pairsetup <- function(x, object,
 #' GGplot of trait pairs
 #'
 #' @param object,x object of class `traitPairs`
-#' @param ... 
+#' @param ... additional parameters
 #' @param drop_xlab drop xlab for all but last plot if `TRUE`
 #' @param legend_position position of legend ("none" for none)
 #' @param legend_nrow number of rows for legend

@@ -15,7 +15,7 @@ ggplot_traitPairs(
 \arguments{
 \item{object, x}{object of class `traitPairs`}
 
-\item{...}{}
+\item{...}{additional parameters}
 
 \item{drop_xlab}{drop xlab for all but last plot if `TRUE`}
 

@@ -48,9 +48,7 @@
 #' @importFrom dplyr distinct group_by mutate select summarize ungroup
 #' @importFrom tidyr all_of unite
 #' @importFrom rlang .data
-#' @importFrom ggplot2 aes element_blank element_text facet_grid geom_jitter
-#'             ggplot ggtitle guides guide_legend scale_fill_manual
-#'             scale_shape_manual theme xlab ylab
+#' @importFrom ggplot2 aes element_blank element_text facet_grid geom_jitter ggplot ggtitle guides guide_legend scale_fill_manual scale_shape_manual theme xlab ylab
 #' @importFrom cowplot draw_grob ggdraw plot_grid
 #' @importFrom grid unit
 #' @export

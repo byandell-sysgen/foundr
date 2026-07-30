@@ -43,9 +43,9 @@ subset_module_kMEs(
 
 \item{title}{title of plot}
 
-\item{...}{}
+\item{...}{additional parameters}
 
-\item{x}{}
+\item{x}{object of class \code{module_kMEs}}
 
 \item{facetmodules}{names of color modules to keep}
 

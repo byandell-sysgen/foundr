@@ -129,8 +129,7 @@ summary_traitAncova <- function(traitAncova, traits = NULL) {
 #' @export
 #' @rdname traitAncova
 #' @importFrom dplyr arrange filter mutate
-#' @importFrom ggplot2 aes geom_abline geom_point ggplot
-#'             scale_x_log10 scale_y_log10 xlab ylab
+#' @importFrom ggplot2 aes geom_abline geom_point ggplot scale_x_log10 scale_y_log10 xlab ylab
 #'
 ggplot_traitAncova <- function(traitAncova, traits = NULL,
                                signif_level = 0.05,

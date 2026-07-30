@@ -12,9 +12,9 @@
 #' 3. data frame with columns for `dataset` and `trait`, with one row entry per traitname.
 #' 4. NULL, in which case all `datatraits` in `object` are returned
 #' 
-#' @param object 
+#' @param object data frame or object containing dataset and trait columns
 #' @param traitnames names of traits, possibly including dataset name with separator 
-#' @param sep 
+#' @param sep separator character(s) between dataset and trait name
 #'
 #' @return vector of trait names prepended by dataset if appropriate
 #' @export

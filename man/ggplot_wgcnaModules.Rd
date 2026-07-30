@@ -26,13 +26,13 @@ ggplot_listof_wgcnaModules(
 \method{autoplot}{listof_wgcnaModules}(object, ...)
 }
 \arguments{
-\item{object}{}
+\item{object}{object of class \code{listof_wgcnaModules}}
 
 \item{response}{response for dendrogram and primary color band}
 
 \item{main}{title of plot}
 
-\item{...}{}
+\item{...}{additional parameters}
 }
 \value{
 ggplot2 object

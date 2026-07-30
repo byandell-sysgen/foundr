@@ -5,8 +5,7 @@
 #' 
 #' @return ggplot2 object
 #' @export
-#' @importFrom ggplot2 aes facet_wrap geom_hline geom_point geom_vline ggplot ggtitle
-#'             scale_color_manual scale_x_log10 scale_y_log10 theme xlab ylab
+#' @importFrom ggplot2 aes facet_wrap geom_hline geom_point geom_vline ggplot ggtitle scale_color_manual scale_x_log10 scale_y_log10 theme xlab ylab
 #' @importFrom dplyr mutate
 #' @importFrom rlang .data
 #'

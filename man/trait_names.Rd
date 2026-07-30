@@ -7,11 +7,11 @@
 trait_names(object, traitnames = NULL, sep = ": ")
 }
 \arguments{
-\item{object}{}
+\item{object}{data frame or object containing dataset and trait columns}
 
 \item{traitnames}{names of traits, possibly including dataset name with separator}
 
-\item{sep}{}
+\item{sep}{separator character(s) between dataset and trait name}
 }
 \value{
 vector of trait names prepended by dataset if appropriate

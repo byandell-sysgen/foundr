@@ -8,8 +8,7 @@
 #'
 #' @return object of class ggplot2
 #' 
-#' @importFrom ggplot2 aes element_text facet_grid geom_jitter geom_smooth ggplot
-#'                     scale_color_manual scale_fill_manual theme xlab ylab
+#' @importFrom ggplot2 aes element_text facet_grid geom_jitter geom_smooth ggplot scale_color_manual scale_fill_manual theme xlab ylab
 #' @importFrom rlang .data
 #' @importFrom RColorBrewer brewer.pal
 #' @importFrom stats formula

@@ -62,8 +62,7 @@ module_kMEs <- function(object) {
 #'
 #' @return ggplot object 
 #' @export
-#' @importFrom ggplot2 aes autoplot element_text facet_wrap geom_abline
-#'             geom_point ggplot ggtitle scale_color_manual theme
+#' @importFrom ggplot2 aes autoplot element_text facet_wrap geom_abline geom_point ggplot ggtitle scale_color_manual theme
 #' @importFrom dplyr arrange count desc
 #' @importFrom rlang .data
 #' @rdname module_kMEs
@@ -122,12 +121,12 @@ autoplot.module_kMEs <- function(object, ...) {
 
 #' Subset module and kMEs
 #' 
-#' @param x 
+#' @param x object of class \code{module_kMEs}
 #' @param facetname name of facet response
 #' @param colorname name of color response
 #' @param facetmodules names of color modules to keep
 #' @param colormodules names of color modules to keep
-#' @param ... 
+#' @param ... additional parameters
 #'
 #' @return data frame 
 #' 
