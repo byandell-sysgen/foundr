@@ -145,6 +145,10 @@ object <- dplyr::filter(object, !is.na(.data[[value]]))
 fitred <- stats::lm(formred, object)
 ```
 
+### Explicit Package Imports (No Meta-Packages)
+
+Do not use meta-packages like `library(tidyverse)` in vignettes, source functions, or examples. Always import explicit individual packages (`library(dplyr)`, `library(ggplot2)`, etc.) to minimize dependency overhead and prevent build container rendering failures.
+
 ### Roxygen2 Documentation
 
 All exported functions in `R/` must include complete Roxygen2 headers:

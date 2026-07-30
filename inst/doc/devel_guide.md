@@ -43,6 +43,8 @@ Created a 3-part R Markdown article suite under `vignettes/devel_guide/`:
   - Master index article providing package purpose, companion package mapping (`foundrShiny`, `foundrHarmony`, `modulr`), local developer quick start commands, and a full visual `mermaid` flowchart mapping data input -> variance partitioning (`partition()`) -> statistical summaries (`strainstats()`) -> S3 trait object construction -> `autoplot()` / `ggplot_*()` / `biplot_*()` visualization layers.
 - **[`vignettes/devel_guide/modules.Rmd`](file:///Users/brianyandell/Documents/Research/byandell-sysgen/foundr/vignettes/devel_guide/modules.Rmd)**:
   - Exhaustive 5-category breakdown of package functions, S3 classes, generics, WGCNA module integrations, visualization engines, and data transformation utilities.
+- **[`vignettes/foundr.Rmd`](file:///Users/brianyandell/Documents/Research/byandell-sysgen/foundr/vignettes/foundr.Rmd)**:
+  - Updated vignette imports to use explicit packages (`library(dplyr)`, `library(ggplot2)`) instead of the `tidyverse` meta-package to ensure clean rendering in automated build containers.
 - **[`vignettes/devel_guide/data_flow.Rmd`](file:///Users/brianyandell/Documents/Research/byandell-sysgen/foundr/vignettes/devel_guide/data_flow.Rmd)**:
   - Technical specification of long-format data schemas, linear model equations for orthogonal variance partitioning ($\text{value} = \text{signal} + \text{rest} + \text{noise}$), ANCOVA modeling, and time-series trapezoidal AUC calculations.
 

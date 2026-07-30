@@ -10,7 +10,8 @@ knitr::opts_chunk$set(echo = TRUE)
 ```
 
 ```{r}
-library(tidyverse)
+library(dplyr)
+library(ggplot2)
 library(foundr)
 ```
 
