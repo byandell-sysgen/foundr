@@ -43,3 +43,7 @@ rsconnect/
 
 # SQLite objects
 *.sqlite
+
+# Local pkgdown build output
+docs/
+docs

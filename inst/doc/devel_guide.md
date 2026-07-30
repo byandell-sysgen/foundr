@@ -12,11 +12,12 @@ This document records the step-by-step process, prompts, blueprint references, d
 
 - Create a `DEVELOPER.md` file for this project
 - Following `../foundrShiny/inst/doc/devel_guide.md` create a Developer Guide and document in `inst/doc/devel_guide.md`
+- I have changed GitHub Pages back to root (/). Please reread `../foundrShiny/inst/doc/devel_guide.md` and make changes to pkgdown or other files to match.
 
 ### Reference Blueprints Used
 
 1. **`../foundrShiny/inst/doc/devel_guide.md`**:
-   - Outlined master index structure (`vignettes/devel_guide/index.Rmd`), sub-module guides, layout conventions, `.nojekyll` setup, and `pkgdown` article integration.
+   - Outlined master index structure (`vignettes/devel_guide/index.Rmd`), sub-module guides, layout conventions, `.nojekyll` setup, GitHub Actions CI/CD deployment (`.github/workflows/pkgdown.yaml`), and `pkgdown` article integration.
 2. **`~/Documents/GitHub/Documentation/github/pkgdown.md`**:
    - Outlined `_pkgdown.yml` configuration, article grouping rules (including quoting subdirectory paths like `"devel_guide/index"`), `.Rbuildignore` anchored exclusions, `.nojekyll` creation, and `mermaid.js` script header injection (`template.includes.in_header`).
 3. **`~/Documents/GitHub/Documentation/prompts/devel_guide.md`**:
@@ -53,28 +54,31 @@ Created [`_pkgdown.yml`](file:///Users/brianyandell/Documents/Research/byandell-
 - Added Mermaid.js CDN script injection in `template.includes.in_header` to automatically render `mermaid` flowcharts on `pkgdown` site pages.
 - Grouped developer articles under `"devel_guide/index"`, `"devel_guide/modules"`, and `"devel_guide/data_flow"`.
 
-### Step 5: `.Rbuildignore` & `.nojekyll` Setup
+### Step 5: Build Exclusion Hygiene & CI/CD Setup
 
 - Updated [`.Rbuildignore`](file:///Users/brianyandell/Documents/Research/byandell-sysgen/foundr/.Rbuildignore) with anchored regex exclusions (`^_pkgdown\.yml$`, `^\.github$`, `^docs$`).
-- Created [`docs/.nojekyll`](file:///Users/brianyandell/Documents/Research/byandell-sysgen/foundr/docs/.nojekyll) to ensure GitHub Pages does not ignore underscore asset folders (`_pkgdown.yml`, `_site`, `_deps`).
+- Updated [`.gitignore`](file:///Users/brianyandell/Documents/Research/byandell-sysgen/foundr/.gitignore) to ignore `docs/` so local builds keep `main` clean.
+- Created [`.github/workflows/pkgdown.yaml`](file:///Users/brianyandell/Documents/Research/byandell-sysgen/foundr/.github/workflows/pkgdown.yaml) for automated GitHub Actions deployment.
 
 ---
 
-## 3. GitHub Pages & Website Publishing
+## 3. GitHub Pages Automated CI/CD Publishing via `gh-pages`
 
-When `pkgdown::build_site()` runs, it compiles static HTML files into `docs/`:
+To avoid cluttering the `main` branch git history with hundreds of compiled HTML files from `docs/`:
 
-- **Main Developer Guide & Mermaid Flowchart**: `articles/devel_guide/index.html`
-- **Function Index & S3 System**: `articles/devel_guide/modules.html`
-- **Data Pipeline & Methodology**: `articles/devel_guide/data_flow.html`
-- **Articles Landing Page**: `articles/index.html`
+1. **Keep `docs/` in `.gitignore`**: Local `pkgdown::build_site()` builds remain untracked in your local workspace, keeping `main` clean (source files only).
+2. **Automated Deployment via [.github/workflows/pkgdown.yaml](file:///Users/brianyandell/Documents/Research/byandell-sysgen/foundr/.github/workflows/pkgdown.yaml)**:
+   - On every `git push` to `main`, GitHub Actions runs `pkgdown::build_site()` in a cloud container.
+   - The workflow step `r-lib/actions/deploy-pkgdown@v2` commits the compiled site directly to an isolated, automated **`gh-pages`** branch.
+3. **GitHub Pages Setting**:
+   - On GitHub.com under **Settings** -> **Pages**:
+     - Set **Source**: **Deploy from a branch**
+     - Set **Branch**: **`gh-pages`** / **`/ (root)`**
+     - Click **Save**
 
-### GitHub Pages Configuration
-
-To serve the site from the `main` branch when `pkgdown` builds into `docs/`:
-
-1. In GitHub Repository Settings -> **Pages**.
-2. Set **Branch**: `main` and **Folder**: `/docs`.
+> [!NOTE]
+> **Why `jekyll-build-pages` failed previously**:
+> GitHub's default Jekyll builder tried to build from `source: ./docs` on `main`. Because `docs/` was in `.gitignore` (and not pushed to `main`), the runner found no `./docs` folder. Deploying via GitHub Actions to the `gh-pages` branch resolves this completely without committing HTML files to `main`.
 
 ---
 
