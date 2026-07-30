@@ -1,0 +1,106 @@
+# foundr Developer Guide Overview & Architecture
+
+## foundr Developer Guide Overview & Architecture
+
+### Package Purpose & Ecosystem
+
+**foundr** is an R package for analyzing and visualizing multiparent
+founder study data (specifically Collaborative Cross founder mouse
+crosses). It provides core statistical decomposition models, strain
+effect estimation, S3 trait object encapsulation, and customizable
+`ggplot2` visualizations.
+
+- **Author:** Brian S. Yandell (<brian.yandell@wisc.edu>)
+- **License:** GPL-3
+- **Minimum R Version:** ≥ 4.2.0
+
+Related packages in the ecosystem: - **`foundr`**: Core data analysis
+algorithms, variance partitioning, statistical summaries, S3 trait
+classes, and plotting functions. - **`foundrShiny`**: Interactive Shiny
+web application providing modular UI components and reactive analysis
+panels. - **`foundrHarmony`**: Data harmonization across multi-tissue
+study datasets (in development). - **`modulr`**: Standardization and
+harmonization of WGCNA module objects.
+
+------------------------------------------------------------------------
+
+### High-Level Package Architecture & Data Flow
+
+The `foundr` package structures founder data processing into an
+end-to-end analytical pipeline:
+
+``` mermaid
+graph TD
+    classDef input fill:#1f77b4,stroke:#333,stroke-width:2px,color:#fff;
+    classDef model fill:#ff7f0e,stroke:#333,stroke-width:2px,color:#fff;
+    classDef s3 fill:#2ca02c,stroke:#333,stroke-width:2px,color:#fff;
+    classDef plot fill:#d62728,stroke:#333,stroke-width:2px,color:#fff;
+    classDef util fill:#9467bd,stroke:#333,stroke-width:2px,color:#fff;
+
+    rawDF["Long-Format Data Frame (strain, sex, animal, trait, value)"]:::input
+    
+    partition["partition() (Orthogonal Variance Partitioning)"]:::model
+    strainstats["strainstats() (Linear Models & F-Stats)"]:::model
+    bestcor["bestcor() (Spearman Trait Correlations)"]:::model
+    traitAncova["traitAncova() (ANCOVA Modeling)"]:::model
+
+    traitSolos["traitSolos S3 Object"]:::s3
+    traitPairs["traitPairs S3 Object"]:::s3
+    traitTimes["traitTimes S3 Object"]:::s3
+    conditionContrasts["conditionContrasts S3 Object"]:::s3
+
+    autoplot["autoplot() / plot() S3 Methods"]:::plot
+    ggplotTemplate["ggplot_template() Design System"]:::plot
+    biplot["biplot_signal() / biplot_pca() (ordr)"]:::plot
+    volcano["volcano() Effect vs Significance"]:::plot
+
+    rawDF --> partition
+    rawDF --> strainstats
+    rawDF --> bestcor
+
+    partition --> traitSolos
+    partition --> traitPairs
+    partition --> traitTimes
+    strainstats --> conditionContrasts
+
+    traitSolos --> autoplot
+    traitPairs --> autoplot
+    traitTimes --> autoplot
+    conditionContrasts --> autoplot
+
+    autoplot --> ggplotTemplate
+    traitSolos --> biplot
+    strainstats --> volcano
+```
+
+------------------------------------------------------------------------
+
+### Developer Quick Start
+
+#### Local Development Workflow
+
+``` r
+
+# Load local package sources dynamically
+devtools::load_all()
+
+# Re-generate documentation & NAMESPACE
+devtools::document()
+
+# Run R package checks
+devtools::check(vignettes = FALSE)
+```
+
+#### Navigating the Guide
+
+For detailed information on individual function groups, parameter
+handling, and statistical modeling algorithms, explore the sub-guides:
+
+- **[Function Index & S3 Class System
+  Breakdown](https://byandell-sysgen.github.io/foundr/articles/devel_guide/modules.md)**:
+  Categorized listing of data analysis functions, S3 trait classes,
+  visualization tools, and utilities.
+- **[Data Pipeline & Statistical
+  Methodology](https://byandell-sysgen.github.io/foundr/articles/devel_guide/data_flow.md)**:
+  In-depth mathematical description of orthogonal variance partitioning,
+  linear model contrasts, time-series AUC, and WGCNA module integration.
