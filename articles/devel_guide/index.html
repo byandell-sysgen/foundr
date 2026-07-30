@@ -21,6 +21,12 @@
 </style>
 <script>
   document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("pre.mermaid").forEach(function(el) {
+      var code = el.querySelector("code");
+      if (code) {
+        el.textContent = code.textContent;
+      }
+    });
     mermaid.initialize({ startOnLoad: true });
   });
 </script>
@@ -100,15 +106,23 @@ customizable <code>ggplot2</code> visualizations.</p>
 <li>
 <strong>Minimum R Version:</strong> ≥ 4.2.0</li>
 </ul>
-<p>Related packages in the ecosystem: -
+<p>Related packages in the ecosystem:</p>
+<ul>
+<li>
 <strong><code>foundr</code></strong>: Core data analysis algorithms,
 variance partitioning, statistical summaries, S3 trait classes, and
-plotting functions. - <strong><code>foundrShiny</code></strong>:
-Interactive Shiny web application providing modular UI components and
-reactive analysis panels. - <strong><code>foundrHarmony</code></strong>:
-Data harmonization across multi-tissue study datasets (in development).
-- <strong><code>modulr</code></strong>: Standardization and
-harmonization of WGCNA module objects.</p>
+plotting functions.</li>
+<li>
+<strong><code>foundrShiny</code></strong>: Interactive Shiny web
+application providing modular UI components and reactive analysis
+panels.</li>
+<li>
+<strong><code>foundrHarmony</code></strong>: Data harmonization
+across multi-tissue study datasets (in development).</li>
+<li>
+<strong><code>modulr</code></strong>: Standardization and
+harmonization of WGCNA module objects.</li>
+</ul>
 <hr>
 </div>
 <div class="section level3">
@@ -120,7 +134,7 @@ into an end-to-end analytical pipeline:</p>
     rawDF["Long-Format Data Frame (strain, sex, animal, trait, value)"]
     
     partition["partition() (Orthogonal Variance Partitioning)"]
-    strainstats["strainstats() (Linear Models &amp; F-Stats)"]
+    strainstats["strainstats() (Linear Models and F-Stats)"]
     bestcor["bestcor() (Spearman Trait Correlations)"]
     traitAncova["traitAncova() (ANCOVA Modeling)"]
 

@@ -14,13 +14,16 @@ effect estimation, S3 trait object encapsulation, and customizable
 - **License:** GPL-3
 - **Minimum R Version:** ≥ 4.2.0
 
-Related packages in the ecosystem: - **`foundr`**: Core data analysis
-algorithms, variance partitioning, statistical summaries, S3 trait
-classes, and plotting functions. - **`foundrShiny`**: Interactive Shiny
-web application providing modular UI components and reactive analysis
-panels. - **`foundrHarmony`**: Data harmonization across multi-tissue
-study datasets (in development). - **`modulr`**: Standardization and
-harmonization of WGCNA module objects.
+Related packages in the ecosystem:
+
+- **`foundr`**: Core data analysis algorithms, variance partitioning,
+  statistical summaries, S3 trait classes, and plotting functions.
+- **`foundrShiny`**: Interactive Shiny web application providing modular
+  UI components and reactive analysis panels.
+- **`foundrHarmony`**: Data harmonization across multi-tissue study
+  datasets (in development).
+- **`modulr`**: Standardization and harmonization of WGCNA module
+  objects.
 
 ------------------------------------------------------------------------
 
@@ -34,7 +37,7 @@ flowchart TD
     rawDF["Long-Format Data Frame (strain, sex, animal, trait, value)"]
     
     partition["partition() (Orthogonal Variance Partitioning)"]
-    strainstats["strainstats() (Linear Models & F-Stats)"]
+    strainstats["strainstats() (Linear Models and F-Stats)"]
     bestcor["bestcor() (Spearman Trait Correlations)"]
     traitAncova["traitAncova() (ANCOVA Modeling)"]
 

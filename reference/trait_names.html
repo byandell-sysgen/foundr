@@ -16,6 +16,12 @@ datasets, but it is also possible that the `dataset` column is absent
   }
 </style><script>
   document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("pre.mermaid").forEach(function(el) {
+      var code = el.querySelector("code");
+      if (code) {
+        el.textContent = code.textContent;
+      }
+    });
     mermaid.initialize({ startOnLoad: true });
   });
 </script></head><body>

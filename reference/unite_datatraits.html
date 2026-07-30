@@ -10,6 +10,12 @@ Need to use both `dataset` and `trait` to identify data for a `trait`."><script 
   }
 </style><script>
   document.addEventListener("DOMContentLoaded", function() {
+    document.querySelectorAll("pre.mermaid").forEach(function(el) {
+      var code = el.querySelector("code");
+      if (code) {
+        el.textContent = code.textContent;
+      }
+    });
     mermaid.initialize({ startOnLoad: true });
   });
 </script></head><body>
