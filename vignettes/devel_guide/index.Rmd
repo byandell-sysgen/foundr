@@ -37,29 +37,23 @@ Related packages in the ecosystem:
 The `foundr` package structures founder data processing into an end-to-end analytical pipeline:
 
 ```mermaid
-graph TD
-    classDef input fill:#1f77b4,stroke:#333,stroke-width:2px,color:#fff;
-    classDef model fill:#ff7f0e,stroke:#333,stroke-width:2px,color:#fff;
-    classDef s3 fill:#2ca02c,stroke:#333,stroke-width:2px,color:#fff;
-    classDef plot fill:#d62728,stroke:#333,stroke-width:2px,color:#fff;
-    classDef util fill:#9467bd,stroke:#333,stroke-width:2px,color:#fff;
-
-    rawDF["Long-Format Data Frame (strain, sex, animal, trait, value)"]:::input
+flowchart TD
+    rawDF["Long-Format Data Frame (strain, sex, animal, trait, value)"]
     
-    partition["partition() (Orthogonal Variance Partitioning)"]:::model
-    strainstats["strainstats() (Linear Models & F-Stats)"]:::model
-    bestcor["bestcor() (Spearman Trait Correlations)"]:::model
-    traitAncova["traitAncova() (ANCOVA Modeling)"]:::model
+    partition["partition() (Orthogonal Variance Partitioning)"]
+    strainstats["strainstats() (Linear Models & F-Stats)"]
+    bestcor["bestcor() (Spearman Trait Correlations)"]
+    traitAncova["traitAncova() (ANCOVA Modeling)"]
 
-    traitSolos["traitSolos S3 Object"]:::s3
-    traitPairs["traitPairs S3 Object"]:::s3
-    traitTimes["traitTimes S3 Object"]:::s3
-    conditionContrasts["conditionContrasts S3 Object"]:::s3
+    traitSolos["traitSolos S3 Object"]
+    traitPairs["traitPairs S3 Object"]
+    traitTimes["traitTimes S3 Object"]
+    conditionContrasts["conditionContrasts S3 Object"]
 
-    autoplot["autoplot() / plot() S3 Methods"]:::plot
-    ggplotTemplate["ggplot_template() Design System"]:::plot
-    biplot["biplot_signal() / biplot_pca() (ordr)"]:::plot
-    volcano["volcano() Effect vs Significance"]:::plot
+    autoplot["autoplot() / plot() S3 Methods"]
+    ggplotTemplate["ggplot_template() Design System"]
+    biplot["biplot_signal() / biplot_pca() (ordr)"]
+    volcano["volcano() Effect vs Significance"]
 
     rawDF --> partition
     rawDF --> strainstats
@@ -78,6 +72,16 @@ graph TD
     autoplot --> ggplotTemplate
     traitSolos --> biplot
     strainstats --> volcano
+
+    classDef input fill:#1f77b4,stroke:#333,stroke-width:2px,color:#fff
+    classDef model fill:#ff7f0e,stroke:#333,stroke-width:2px,color:#fff
+    classDef s3 fill:#2ca02c,stroke:#333,stroke-width:2px,color:#fff
+    classDef plot fill:#d62728,stroke:#333,stroke-width:2px,color:#fff
+
+    class rawDF input
+    class partition,strainstats,bestcor,traitAncova model
+    class traitSolos,traitPairs,traitTimes,conditionContrasts s3
+    class autoplot,ggplotTemplate,biplot,volcano plot
 ```
 
 ---
