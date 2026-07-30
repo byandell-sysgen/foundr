@@ -3,3 +3,6 @@
 rsconnect/
 inst/shinyApp/rsconnect
 ^foundr\.Rproj$
+^_pkgdown\.yml$
+^\.github$
+^docs$
