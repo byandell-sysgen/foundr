@@ -53,6 +53,8 @@ Created [`_pkgdown.yml`](file:///Users/brianyandell/Documents/Research/byandell-
 - Configured Bootstrap 5 theme.
 - Added Mermaid.js CDN script injection in `template.includes.in_header` to automatically render `mermaid` flowcharts on `pkgdown` site pages.
 - Grouped developer articles under `"devel_guide/index"`, `"devel_guide/modules"`, and `"devel_guide/data_flow"`.
+- Explicitly listed package vignettes (`"foundr"`, `"foundrShiny"`) under `articles:` to comply with `pkgdown` rules requiring all `vignettes/*.Rmd` files to be indexed.
+
 
 ### Step 5: Build Exclusion Hygiene & CI/CD Setup
 

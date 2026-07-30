@@ -27,6 +27,11 @@ navbar:
     articles:
       text: Articles
       menu:
+        - text: "Getting Started with foundr"
+          href: articles/foundr.html
+        - text: "foundrShiny Integration"
+          href: articles/foundrShiny.html
+        - text: "---"
         - text: "Developer Guide Overview & Architecture"
           href: articles/devel_guide/index.html
         - text: "Function Index & S3 Class System Breakdown"
@@ -35,6 +40,10 @@ navbar:
           href: articles/devel_guide/data_flow.html
 
 articles:
+  - title: "Package Vignettes"
+    contents:
+      - "foundr"
+      - "foundrShiny"
   - title: "Developer Documentation"
     contents:
       - "devel_guide/index"
