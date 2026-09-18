@@ -127,7 +127,7 @@ friendly palette).
 
 4.  **S3 Generics & Method Dispatch**: Standard S3 methods implemented
     across trait objects include:  
-    [`autoplot()`](https://ggplot2.tidyverse.org/reference/autoplot.html),
+    `autoplot()`,
     [`plot()`](https://rdrr.io/r/graphics/plot.default.html),
     [`summary()`](https://rdrr.io/r/base/summary.html),
     [`subset()`](https://rdrr.io/r/base/subset.html),

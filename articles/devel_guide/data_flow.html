@@ -101,7 +101,7 @@ time-series handling in <code>foundr</code>.</p>
 containing:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Core input schema:</span></span>
-<span><span class="fu"><a href="https://tibble.tidyverse.org/reference/tibble.html" class="external-link">tibble</a></span><span class="op">(</span></span>
+<span><span class="fu">tibble</span><span class="op">(</span></span>
 <span>  dataset   <span class="op">=</span> <span class="st">"DietStudy"</span>,        <span class="co"># Optional dataset tag</span></span>
 <span>  strain    <span class="op">=</span> <span class="st">"AJ"</span>,               <span class="co"># One of 8 CC strains (AJ, B6, 129, NOD, NZO, CAST, PWK, WSB)</span></span>
 <span>  sex       <span class="op">=</span> <span class="st">"F"</span>,                <span class="co"># Biological sex ("M" or "F")</span></span>
@@ -185,7 +185,7 @@ containing embedded time suffixes (e.g. <code>Weight_t1</code>,
 trapezoidal Area Under the Curve (AUC) over time trajectories.</li>
 <li>
 <strong><code>traitTimes</code></strong>: S3 object wrapping
-longitudinal trajectories with custom <code><a href="https://ggplot2.tidyverse.org/reference/autoplot.html" class="external-link">autoplot()</a></code> methods
+longitudinal trajectories with custom <code>autoplot()</code> methods
 for visual curve comparisons across founder strains.</li>
 </ol>
 </div>

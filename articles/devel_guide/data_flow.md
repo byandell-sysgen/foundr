@@ -114,6 +114,5 @@ tolerance test curves), `foundr` provides:
     Computes trapezoidal Area Under the Curve (AUC) over time
     trajectories.
 3.  **`traitTimes`**: S3 object wrapping longitudinal trajectories with
-    custom
-    [`autoplot()`](https://ggplot2.tidyverse.org/reference/autoplot.html)
-    methods for visual curve comparisons across founder strains.
+    custom `autoplot()` methods for visual curve comparisons across
+    founder strains.
